@@ -20,6 +20,7 @@ public class PlaylistPage extends BasePage {
     private static final By deletionConfirmationButton = By.xpath("//button[@class='Button-qlcn5g-0 hgTVhT']//span[text()='DELETE']");
     private static final By playlistDeletedPopUp = By.cssSelector("div[class=AOaoydTb5lrGytHbTAAy]");
     private static final By moreOptionsMenu = By.xpath("//div[@id='context-menu']");
+    private static final By actualPlaylistName = By.xpath("//span[@class='o4KVKZmeHsoRZ2Ltl078']//h1");
     private static By selectedMenuItem;
 
     public void playlistPageLoadedCheck() {
@@ -50,6 +51,8 @@ public class PlaylistPage extends BasePage {
 
         assertTrue(methods.isElementClickable(playlistEditSaveButton, 10));
         methods.clickElement(playlistEditSaveButton);
+        
+        assertEquals(playlistName, methods.getText(actualPlaylistName));
 
     }
 
