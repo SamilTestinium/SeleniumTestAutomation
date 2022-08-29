@@ -36,7 +36,7 @@ public class LoginPage extends BasePage {
 
         methods.clickElement(By.id("login-button"));
 
-        methods.waitBySeconds(2);
+        methods.waitBySeconds(5);
 
     }
 
